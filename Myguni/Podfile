@@ -10,5 +10,6 @@ target 'Myguni' do
     pod 'SnapKit'
     pod 'Then'
     pod 'RealmSwift'
+    pod 'TextFieldEffects'
 
 end

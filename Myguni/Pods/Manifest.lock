@@ -5,11 +5,13 @@ PODS:
   - RealmSwift (10.51.0):
     - Realm (= 10.51.0)
   - SnapKit (5.7.1)
+  - TextFieldEffects (1.6.0)
   - Then (3.0.0)
 
 DEPENDENCIES:
   - RealmSwift
   - SnapKit
+  - TextFieldEffects
   - Then
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SnapKit
+    - TextFieldEffects
     - Then
 
 SPEC CHECKSUMS:
   Realm: 7e75a684c16aca7c6a5db9c70caebf37f07dcee5
   RealmSwift: 35bdffb8a504659d1b3e3f45b624e93ac0ec89e3
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 10807b784811f32201148622c92d054e1ceeab1e
+PODFILE CHECKSUM: 3569e44dd5617388e612aec6783b4ddfef76f4cc
 
 COCOAPODS: 1.15.2

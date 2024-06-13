@@ -20,6 +20,10 @@
 		FF7C98472C1AB3BF0009346F /* DefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98462C1AB3BF0009346F /* DefaultManager.swift */; };
 		FF7C98492C1AB3F00009346F /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98482C1AB3F00009346F /* DefaultViewController.swift */; };
 		FFCA690E2C1ABED0004758D0 /* NewCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA690D2C1ABED0004758D0 /* NewCartViewController.swift */; };
+		FFCA69102C1ABF42004758D0 /* NewCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA690F2C1ABF42004758D0 /* NewCartView.swift */; };
+		FFCA69122C1ABF4F004758D0 /* NewCartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA69112C1ABF4F004758D0 /* NewCartManager.swift */; };
+		FFCA69142C1ACD94004758D0 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA69132C1ACD94004758D0 /* CartItemCell.swift */; };
+		FFCA69162C1ACEB1004758D0 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA69152C1ACEB1004758D0 /* CartItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		FF7C98462C1AB3BF0009346F /* DefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultManager.swift; path = ../../../../SmoothTripPlanner/SmoothTripPlanner/Models/DefaultManager.swift; sourceTree = "<group>"; };
 		FF7C98482C1AB3F00009346F /* DefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultViewController.swift; path = ../../../../SmoothTripPlanner/SmoothTripPlanner/Controllers/DefaultViewController.swift; sourceTree = "<group>"; };
 		FFCA690D2C1ABED0004758D0 /* NewCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCartViewController.swift; sourceTree = "<group>"; };
+		FFCA690F2C1ABF42004758D0 /* NewCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCartView.swift; sourceTree = "<group>"; };
+		FFCA69112C1ABF4F004758D0 /* NewCartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCartManager.swift; sourceTree = "<group>"; };
+		FFCA69132C1ACD94004758D0 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		FFCA69152C1ACEB1004758D0 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,8 @@
 			children = (
 				FF7C98422C1AB3880009346F /* MainManager.swift */,
 				FF7C98462C1AB3BF0009346F /* DefaultManager.swift */,
+				FFCA69112C1ABF4F004758D0 /* NewCartManager.swift */,
+				FFCA69152C1ACEB1004758D0 /* CartItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			children = (
 				FF7C98402C1AB36E0009346F /* MainView.swift */,
 				FF7C98442C1AB3AF0009346F /* DefaultView.swift */,
+				FFCA690F2C1ABF42004758D0 /* NewCartView.swift */,
+				FFCA69132C1ACD94004758D0 /* CartItemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,13 +261,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF7C983F2C1AB33B0009346F /* MainViewController.swift in Sources */,
+				FFCA69102C1ABF42004758D0 /* NewCartView.swift in Sources */,
+				FFCA69142C1ACD94004758D0 /* CartItemCell.swift in Sources */,
 				FF7C98412C1AB36E0009346F /* MainView.swift in Sources */,
 				FF7C98492C1AB3F00009346F /* DefaultViewController.swift in Sources */,
 				FF7C98452C1AB3AF0009346F /* DefaultView.swift in Sources */,
 				FF7C98262C1AAEDE0009346F /* AppDelegate.swift in Sources */,
 				FFCA690E2C1ABED0004758D0 /* NewCartViewController.swift in Sources */,
+				FFCA69122C1ABF4F004758D0 /* NewCartManager.swift in Sources */,
 				FF7C98472C1AB3BF0009346F /* DefaultManager.swift in Sources */,
 				FF7C98432C1AB3880009346F /* MainManager.swift in Sources */,
+				FFCA69162C1ACEB1004758D0 /* CartItem.swift in Sources */,
 				FF7C98282C1AAEDE0009346F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

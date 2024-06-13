@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     private let mainView = MainView()
     
@@ -18,14 +18,30 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupAddTarget()
+        
         additionalSafeAreaInsets.top = -49 // 기본 탭바 높이 만큼 safeArea영역 증가. Tabbar의 rootViewController는...
         
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
-        
         mainView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
+
+    private func setupAddTarget() {
+        mainView.floatingButton.addTarget(self, action: #selector(floatingButtonTapped), for: .touchUpInside)
+    }
+    
+    //
+    @objc func floatingButtonTapped() {
+        print("플로팅 버튼 클릭")
+        let newCartVC = NewCartViewController()
+//        newCartVC.modalPresentationStyle = .fullScreen
+        present(newCartVC, animated: true, completion: nil)
+    }
+    
 }
+
+
 
 // MARK: - UITableViewDataSource
 
