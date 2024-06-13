@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CD43148A3D24FDADD9EA26B /* Pods_Myguni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE6AD3CF5EA8F34613ED311 /* Pods_Myguni.framework */; };
 		FF7C98262C1AAEDE0009346F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98252C1AAEDE0009346F /* AppDelegate.swift */; };
 		FF7C98282C1AAEDE0009346F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98272C1AAEDE0009346F /* SceneDelegate.swift */; };
-		FF7C982A2C1AAEDE0009346F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98292C1AAEDE0009346F /* ViewController.swift */; };
 		FF7C982D2C1AAEDE0009346F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FF7C982C2C1AAEDE0009346F /* Base */; };
 		FF7C982F2C1AAEDF0009346F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7C982E2C1AAEDF0009346F /* Assets.xcassets */; };
 		FF7C98322C1AAEDF0009346F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FF7C98312C1AAEDF0009346F /* Base */; };
+		FF7C983F2C1AB33B0009346F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C983E2C1AB33B0009346F /* MainViewController.swift */; };
+		FF7C98412C1AB36E0009346F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98402C1AB36E0009346F /* MainView.swift */; };
+		FF7C98432C1AB3880009346F /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98422C1AB3880009346F /* MainManager.swift */; };
+		FF7C98452C1AB3AF0009346F /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98442C1AB3AF0009346F /* DefaultView.swift */; };
+		FF7C98472C1AB3BF0009346F /* DefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98462C1AB3BF0009346F /* DefaultManager.swift */; };
+		FF7C98492C1AB3F00009346F /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C98482C1AB3F00009346F /* DefaultViewController.swift */; };
+		FFCA690E2C1ABED0004758D0 /* NewCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA690D2C1ABED0004758D0 /* NewCartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04CD24438EBB31C8C866C535 /* Pods-Myguni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myguni.debug.xcconfig"; path = "Target Support Files/Pods-Myguni/Pods-Myguni.debug.xcconfig"; sourceTree = "<group>"; };
+		1097D32A639ECCC0BB913ABD /* Pods-Myguni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Myguni.release.xcconfig"; path = "Target Support Files/Pods-Myguni/Pods-Myguni.release.xcconfig"; sourceTree = "<group>"; };
+		EAE6AD3CF5EA8F34613ED311 /* Pods_Myguni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Myguni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7C98222C1AAEDE0009346F /* Myguni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myguni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7C98252C1AAEDE0009346F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF7C98272C1AAEDE0009346F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF7C98292C1AAEDE0009346F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF7C982C2C1AAEDE0009346F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF7C982E2C1AAEDF0009346F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7C98312C1AAEDF0009346F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF7C98332C1AAEDF0009346F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF7C983E2C1AB33B0009346F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FF7C98402C1AB36E0009346F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FF7C98422C1AB3880009346F /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
+		FF7C98442C1AB3AF0009346F /* DefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultView.swift; path = ../../../../SmoothTripPlanner/SmoothTripPlanner/Views/DefaultView.swift; sourceTree = "<group>"; };
+		FF7C98462C1AB3BF0009346F /* DefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultManager.swift; path = ../../../../SmoothTripPlanner/SmoothTripPlanner/Models/DefaultManager.swift; sourceTree = "<group>"; };
+		FF7C98482C1AB3F00009346F /* DefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultViewController.swift; path = ../../../../SmoothTripPlanner/SmoothTripPlanner/Controllers/DefaultViewController.swift; sourceTree = "<group>"; };
+		FFCA690D2C1ABED0004758D0 /* NewCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD43148A3D24FDADD9EA26B /* Pods_Myguni.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B7D022353AA06C849FDF5A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6AD3CF5EA8F34613ED311 /* Pods_Myguni.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C038621DD3339631014D41D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04CD24438EBB31C8C866C535 /* Pods-Myguni.debug.xcconfig */,
+				1097D32A639ECCC0BB913ABD /* Pods-Myguni.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FF7C98192C1AAEDE0009346F = {
 			isa = PBXGroup;
 			children = (
 				FF7C98242C1AAEDE0009346F /* Myguni */,
 				FF7C98232C1AAEDE0009346F /* Products */,
+				C038621DD3339631014D41D4 /* Pods */,
+				6B7D022353AA06C849FDF5A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,45 @@
 		FF7C98242C1AAEDE0009346F /* Myguni */ = {
 			isa = PBXGroup;
 			children = (
+				FF7C983B2C1AB1A80009346F /* Models */,
+				FF7C983C2C1AB2080009346F /* Views */,
+				FF7C983D2C1AB2150009346F /* Controllers */,
 				FF7C98252C1AAEDE0009346F /* AppDelegate.swift */,
 				FF7C98272C1AAEDE0009346F /* SceneDelegate.swift */,
-				FF7C98292C1AAEDE0009346F /* ViewController.swift */,
 				FF7C982B2C1AAEDE0009346F /* Main.storyboard */,
 				FF7C982E2C1AAEDF0009346F /* Assets.xcassets */,
 				FF7C98302C1AAEDF0009346F /* LaunchScreen.storyboard */,
 				FF7C98332C1AAEDF0009346F /* Info.plist */,
 			);
 			path = Myguni;
+			sourceTree = "<group>";
+		};
+		FF7C983B2C1AB1A80009346F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF7C98422C1AB3880009346F /* MainManager.swift */,
+				FF7C98462C1AB3BF0009346F /* DefaultManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF7C983C2C1AB2080009346F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF7C98402C1AB36E0009346F /* MainView.swift */,
+				FF7C98442C1AB3AF0009346F /* DefaultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF7C983D2C1AB2150009346F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF7C983E2C1AB33B0009346F /* MainViewController.swift */,
+				FF7C98482C1AB3F00009346F /* DefaultViewController.swift */,
+				FFCA690D2C1ABED0004758D0 /* NewCartViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF7C98362C1AAEDF0009346F /* Build configuration list for PBXNativeTarget "Myguni" */;
 			buildPhases = (
+				2E5739F0A8349B3120918FB2 /* [CP] Check Pods Manifest.lock */,
 				FF7C981E2C1AAEDE0009346F /* Sources */,
 				FF7C981F2C1AAEDE0009346F /* Frameworks */,
 				FF7C98202C1AAEDE0009346F /* Resources */,
+				603A8BFE405C1533F7A57828 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +201,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E5739F0A8349B3120918FB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Myguni-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		603A8BFE405C1533F7A57828 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myguni/Pods-Myguni-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Myguni/Pods-Myguni-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Myguni/Pods-Myguni-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF7C981E2C1AAEDE0009346F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7C982A2C1AAEDE0009346F /* ViewController.swift in Sources */,
+				FF7C983F2C1AB33B0009346F /* MainViewController.swift in Sources */,
+				FF7C98412C1AB36E0009346F /* MainView.swift in Sources */,
+				FF7C98492C1AB3F00009346F /* DefaultViewController.swift in Sources */,
+				FF7C98452C1AB3AF0009346F /* DefaultView.swift in Sources */,
 				FF7C98262C1AAEDE0009346F /* AppDelegate.swift in Sources */,
+				FFCA690E2C1ABED0004758D0 /* NewCartViewController.swift in Sources */,
+				FF7C98472C1AB3BF0009346F /* DefaultManager.swift in Sources */,
+				FF7C98432C1AB3880009346F /* MainManager.swift in Sources */,
 				FF7C98282C1AAEDE0009346F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,7 +319,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +382,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -287,6 +403,7 @@
 		};
 		FF7C98372C1AAEDF0009346F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04CD24438EBB31C8C866C535 /* Pods-Myguni.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +431,7 @@
 		};
 		FF7C98382C1AAEDF0009346F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1097D32A639ECCC0BB913ABD /* Pods-Myguni.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
