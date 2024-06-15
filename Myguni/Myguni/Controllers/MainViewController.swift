@@ -56,7 +56,7 @@ final class MainViewController: UIViewController {
     
     private func loadCarts() {
         carts = mainManager.getAllCarts()
-        print(carts)
+//        print(carts)
         mainView.tableView.reloadData()
     }
     
@@ -104,7 +104,7 @@ extension MainViewController: UITableViewDelegate {
             return
         }
         
-        print("Selected row: \(indexPath.row + 1)")
+        print("Selected row: \(indexPath.row)")
         print(selectedCart.title, selectedCart.items)
         
         // 선택한 카트 정보를 담은 뷰 컨트롤러 생성

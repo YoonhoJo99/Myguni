@@ -37,6 +37,7 @@ final class NewCartViewController: UIViewController {
 
     @objc func addButtonTapped() {
         print("장바구니 목록 추가하기 버튼 호출")
+        
         // 새 항목 추가
         let newItem = CartItem(name: "", count: 1)
         cartItems.append(newItem)
@@ -77,6 +78,7 @@ final class NewCartViewController: UIViewController {
 
 }
 
+//
 extension NewCartViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,6 +92,7 @@ extension NewCartViewController: UITableViewDataSource {
     }
 }
 
+//
 extension NewCartViewController: CartItemCellDelegate {
     
     func cartItemCellDidTapDelete(_ cell: CartItemCell) {

@@ -38,12 +38,29 @@ final class CartDetailView: UIView {
     }
     
     // 저장 버튼
-    lazy var saveButton = UIButton().then {
-        $0.setTitle("수정하기", for: .normal)
+    lazy var editButton = UIButton().then {
+        $0.setTitle("돌아가기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         $0.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         $0.layer.cornerRadius = 10
+    }
+    
+    // 삭제 버튼
+    lazy var deleteButton = UIButton().then {
+        $0.setTitle("삭제하기", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        $0.layer.cornerRadius = 10
+    }
+    
+    // StackView to hold editButton and deleteButton horizontally
+    private lazy var buttonStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 20
+        $0.alignment = .fill
+        $0.distribution = .fillEqually
     }
     
     override init(frame: CGRect) {
@@ -63,10 +80,14 @@ final class CartDetailView: UIView {
     }
     
     private func addViews() {
-       addSubview(nameTextField)
-       addSubview(addButton)
-       addSubview(tableView)
-       addSubview(saveButton)
+        addSubview(nameTextField)
+        addSubview(addButton)
+        addSubview(tableView)
+        
+        // Add buttons to stack view
+        buttonStackView.addArrangedSubview(editButton)
+        buttonStackView.addArrangedSubview(deleteButton)
+        addSubview(buttonStackView)
     }
     
     private func setConstraints() {
@@ -85,15 +106,15 @@ final class CartDetailView: UIView {
         tableView.snp.makeConstraints {
             $0.top.equalTo(addButton.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(40)
-            $0.bottom.equalTo(saveButton.snp.top).offset(-20)
+            $0.bottom.equalTo(buttonStackView.snp.top).offset(-20) // Adjust bottom constraint
         }
         
-        saveButton.snp.makeConstraints {
+        buttonStackView.snp.makeConstraints {
+            $0.height.equalTo(50)
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(40)
             $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(40)
-            $0.height.equalTo(50)
         }
-        
     }
     
 }
+

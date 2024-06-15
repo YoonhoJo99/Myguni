@@ -20,13 +20,13 @@ final class CartItemCell: UITableViewCell {
     weak var delegate: CartItemCellDelegate?
     
     // 이름 입력 필드
-    private let nameTextField = UITextField().then {
+    lazy var nameTextField = UITextField().then {
         $0.placeholder = "이름"
         $0.borderStyle = .roundedRect
     }
     
     // 수량 입력 필드
-    private let countTextField = UITextField().then {
+    lazy var countTextField = UITextField().then {
         $0.placeholder = "1"
         $0.borderStyle = .roundedRect
     }
@@ -50,7 +50,6 @@ final class CartItemCell: UITableViewCell {
         addViews()
         setupConstraints()
         setupTextFieldActions()
-        setupDeleteButtonAction()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -85,9 +84,6 @@ final class CartItemCell: UITableViewCell {
     private func setupTextFieldActions() {
         nameTextField.addTarget(self, action: #selector(nameTextFieldDidChange(_:)), for: .editingChanged)
         countTextField.addTarget(self, action: #selector(countTextFieldDidChange(_:)), for: .editingChanged)
-    }
-    
-    private func setupDeleteButtonAction() {
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
     }
     
