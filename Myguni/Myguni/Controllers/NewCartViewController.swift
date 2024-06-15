@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class NewCartViewController: UIViewController {
 
@@ -13,7 +14,7 @@ final class NewCartViewController: UIViewController {
     
     private let newCartManager = NewCartManager()
     
-    private var cartItems: [CartItem] = []
+    private var cartItems = List<CartItem>()
     
     override func loadView() {
         view = newCartView
@@ -49,10 +50,14 @@ final class NewCartViewController: UIViewController {
         print("저장하기 버튼 호출")
         
         // 새로운 카트 저장 -> 동일한 이름의 카트 입력시 경고 발생. 저장 불가능
-        newCartManager.saveData(newCartView.nameTextField.text) { success in
+        newCartManager.saveData(newCartView.nameTextField.text, cartItems) { [weak self] success in
+            guard let self = self else { return }
+            
             if success {
-                // 저장 성공
-                print("카트 저장 성공")
+                // 저장 성공, 메인 뷰 컨트롤러로 이동
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             } else {
                 // 저장 실패 (중복된 이름)
                 print("동일한 이름의 카트가 이미 존재합니다.")
@@ -62,6 +67,7 @@ final class NewCartViewController: UIViewController {
             }
         }
     }
+
 
     private func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

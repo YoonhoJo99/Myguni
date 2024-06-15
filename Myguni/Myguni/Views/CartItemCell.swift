@@ -31,8 +31,14 @@ final class CartItemCell: UITableViewCell {
         $0.borderStyle = .roundedRect
     }
     
+    // 삭제 버튼
+    private let deleteButton = UIButton().then {
+        $0.setTitle("삭제", for: .normal)
+        $0.setTitleColor(.red, for: .normal)
+    }
+    
     // 스택뷰
-    private let stackView = UIStackView().then {
+    private lazy var stackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 8
         $0.alignment = .fill
@@ -44,6 +50,7 @@ final class CartItemCell: UITableViewCell {
         addViews()
         setupConstraints()
         setupTextFieldActions()
+        setupDeleteButtonAction()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,9 +58,10 @@ final class CartItemCell: UITableViewCell {
     }
     
     private func addViews() {
-        // 스택뷰에 텍스트 필드를 추가
+        // 스택뷰에 컨트롤 추가
         stackView.addArrangedSubview(nameTextField)
         stackView.addArrangedSubview(countTextField)
+        stackView.addArrangedSubview(deleteButton)
         contentView.addSubview(stackView)
     }
     
@@ -67,11 +75,20 @@ final class CartItemCell: UITableViewCell {
         nameTextField.snp.makeConstraints { make in
             make.width.equalTo(countTextField.snp.width).multipliedBy(2)
         }
+        
+        // 삭제 버튼 너비 설정
+        deleteButton.snp.makeConstraints { make in
+            make.width.equalTo(60) // 예시로 고정된 너비
+        }
     }
     
     private func setupTextFieldActions() {
         nameTextField.addTarget(self, action: #selector(nameTextFieldDidChange(_:)), for: .editingChanged)
         countTextField.addTarget(self, action: #selector(countTextFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    private func setupDeleteButtonAction() {
+        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
     }
     
     @objc private func nameTextFieldDidChange(_ textField: UITextField) {
@@ -82,6 +99,10 @@ final class CartItemCell: UITableViewCell {
         if let countText = textField.text, let count = Int(countText) {
             delegate?.cartItemCellDidUpdateCount(self, didUpdateCount: count)
         }
+    }
+    
+    @objc private func deleteButtonTapped() {
+        delegate?.cartItemCellDidTapDelete(self)
     }
     
     func configure(with item: CartItem) {

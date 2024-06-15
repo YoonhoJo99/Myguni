@@ -9,5 +9,5 @@ import RealmSwift
 
 class Cart: Object {
     @objc dynamic var title: String = ""
-    let items = List<CartItem>()
+    var items = List<CartItem>()
 }

@@ -12,6 +12,18 @@ final class MainManager {
     // Realm에 접근하기 위한 인스턴스
     private let realm: Realm
     
+    // Realm 인스턴스를 외부에서 접근할 수 있는 프로퍼티
+    var realmInstance: Realm? {
+        do {
+            // Realm 인스턴스 초기화
+            let realm = try Realm()
+            return realm
+        } catch {
+            print("Failed to access Realm database: \(error)")
+            return nil
+        }
+    }
+
     init() {
         // Realm 인스턴스 초기화
         do {

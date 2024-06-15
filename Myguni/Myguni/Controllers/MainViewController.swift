@@ -13,6 +13,7 @@ final class MainViewController: UIViewController {
     private let mainView = MainView()
     private let mainManager = MainManager()
     private var carts: Results<Cart>?
+    private var notificationToken: NotificationToken?
     
     override func loadView() {
         self.view = mainView
@@ -29,7 +30,18 @@ final class MainViewController: UIViewController {
         mainView.tableView.delegate = self
         mainView.tableView.register(CartCell.self, forCellReuseIdentifier: "CartCell")
         
-        carts = mainManager.getAllCarts() // Realm에서 저장된 Cart 데이터 가져오기
+        // Realm에서 저장된 Cart 데이터 가져오기
+        loadCarts()
+        
+        // Realm 데이터 변경을 감지하여 테이블 뷰를 업데이트
+        observeRealmChanges()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 화면이 나타날 때마다 데이터를 다시 로드하여 테이블 뷰를 업데이트
+        loadCarts()
     }
     
     private func setupAddTarget() {
@@ -39,7 +51,30 @@ final class MainViewController: UIViewController {
     @objc func floatingButtonTapped() {
         print("플로팅 버튼 클릭")
         let newCartVC = NewCartViewController()
-        present(newCartVC, animated: true, completion: nil)
+        navigationController?.pushViewController(newCartVC, animated: true)
+    }
+    
+    private func loadCarts() {
+        carts = mainManager.getAllCarts()
+        print(carts)
+        mainView.tableView.reloadData()
+    }
+    
+    private func observeRealmChanges() {
+        guard let realm = mainManager.realmInstance else {
+            return
+        }
+        
+        // Realm의 알림 기능을 이용하여 데이터 변경 감지
+        notificationToken = realm.observe { [weak self] _, _ in
+            // 데이터 변경 시 테이블 뷰를 업데이트
+            self?.loadCarts()
+        }
+    }
+    
+    deinit {
+        // 알림 토큰 해제
+        notificationToken?.invalidate()
     }
 }
 
@@ -70,13 +105,10 @@ extension MainViewController: UITableViewDelegate {
         }
         
         print("Selected row: \(indexPath.row + 1)")
+        print(selectedCart.title, selectedCart.items)
         
         // 선택한 카트 정보를 담은 뷰 컨트롤러 생성
         let cartDetailVC = CartDetailViewController(cart: selectedCart)
         navigationController?.pushViewController(cartDetailVC, animated: true)
     }
 }
-
-
-
-
