@@ -15,7 +15,7 @@ final class CartCell: UITableViewCell {
     lazy var nameLabel = UILabel().then {
         $0.text = "" //
         $0.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1) // 색깔 변경 예정
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        $0.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
         $0.textAlignment = .center
     }
     

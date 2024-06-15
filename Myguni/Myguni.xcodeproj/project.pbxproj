@@ -26,6 +26,8 @@
 		FFCA69162C1ACEB1004758D0 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA69152C1ACEB1004758D0 /* CartItem.swift */; };
 		FFCA691A2C1D70F3004758D0 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA69192C1D70F3004758D0 /* Cart.swift */; };
 		FFCA691C2C1D7205004758D0 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA691B2C1D7205004758D0 /* CartCell.swift */; };
+		FFCA69242C1D7A2D004758D0 /* CartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA69232C1D7A2D004758D0 /* CartDetailViewController.swift */; };
+		FFCA69262C1D7ACB004758D0 /* CartDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA69252C1D7ACB004758D0 /* CartDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		FFCA69152C1ACEB1004758D0 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		FFCA69192C1D70F3004758D0 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		FFCA691B2C1D7205004758D0 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		FFCA69232C1D7A2D004758D0 /* CartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailViewController.swift; sourceTree = "<group>"; };
+		FFCA69252C1D7ACB004758D0 /* CartDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				FFCA69132C1ACD94004758D0 /* CartItemCell.swift */,
 				FFCA691B2C1D7205004758D0 /* CartCell.swift */,
 				FF7C98442C1AB3AF0009346F /* DefaultView.swift */,
+				FFCA69252C1D7ACB004758D0 /* CartDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				FF7C983E2C1AB33B0009346F /* MainViewController.swift */,
 				FFCA690D2C1ABED0004758D0 /* NewCartViewController.swift */,
 				FF7C98482C1AB3F00009346F /* DefaultViewController.swift */,
+				FFCA69232C1D7A2D004758D0 /* CartDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,12 +277,14 @@
 				FFCA69102C1ABF42004758D0 /* NewCartView.swift in Sources */,
 				FFCA69142C1ACD94004758D0 /* CartItemCell.swift in Sources */,
 				FFCA691A2C1D70F3004758D0 /* Cart.swift in Sources */,
+				FFCA69242C1D7A2D004758D0 /* CartDetailViewController.swift in Sources */,
 				FF7C98412C1AB36E0009346F /* MainView.swift in Sources */,
 				FF7C98492C1AB3F00009346F /* DefaultViewController.swift in Sources */,
 				FF7C98452C1AB3AF0009346F /* DefaultView.swift in Sources */,
 				FF7C98262C1AAEDE0009346F /* AppDelegate.swift in Sources */,
 				FFCA690E2C1ABED0004758D0 /* NewCartViewController.swift in Sources */,
 				FFCA69122C1ABF4F004758D0 /* NewCartManager.swift in Sources */,
+				FFCA69262C1D7ACB004758D0 /* CartDetailView.swift in Sources */,
 				FF7C98472C1AB3BF0009346F /* DefaultManager.swift in Sources */,
 				FF7C98432C1AB3880009346F /* MainManager.swift in Sources */,
 				FFCA69162C1ACEB1004758D0 /* CartItem.swift in Sources */,

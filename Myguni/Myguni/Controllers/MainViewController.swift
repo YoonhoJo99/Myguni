@@ -65,7 +65,15 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedCart = carts?[indexPath.row] else {
+            return
+        }
+        
         print("Selected row: \(indexPath.row + 1)")
+        
+        // 선택한 카트 정보를 담은 뷰 컨트롤러 생성
+        let cartDetailVC = CartDetailViewController(cart: selectedCart)
+        navigationController?.pushViewController(cartDetailVC, animated: true)
     }
 }
 

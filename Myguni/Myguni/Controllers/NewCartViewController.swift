@@ -48,8 +48,27 @@ final class NewCartViewController: UIViewController {
     @objc func saveButtonTapped() {
         print("저장하기 버튼 호출")
         
-        newCartManager.saveData(newCartView.nameTextField.text, cartItems)
+        // 새로운 카트 저장 -> 동일한 이름의 카트 입력시 경고 발생. 저장 불가능
+        newCartManager.saveData(newCartView.nameTextField.text) { success in
+            if success {
+                // 저장 성공
+                print("카트 저장 성공")
+            } else {
+                // 저장 실패 (중복된 이름)
+                print("동일한 이름의 카트가 이미 존재합니다.")
+                DispatchQueue.main.async {
+                    self.showAlert(title: "중복된 이름", message: "동일한 이름의 카트가 이미 존재합니다.")
+                }
+            }
+        }
     }
+
+    private func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+
 }
 
 extension NewCartViewController: UITableViewDataSource {

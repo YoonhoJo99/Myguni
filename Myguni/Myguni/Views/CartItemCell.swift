@@ -84,9 +84,8 @@ final class CartItemCell: UITableViewCell {
         }
     }
     
-    func configure(with cartItem: CartItem) {
-        // 데이터 구성 메소드
-        nameTextField.text = cartItem.name
-        countTextField.text = "\(cartItem.count)"
+    func configure(with item: CartItem) {
+        nameTextField.text = item.name
+        countTextField.text = "\(item.count)"
     }
 }
