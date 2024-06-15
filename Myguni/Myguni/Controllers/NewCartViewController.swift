@@ -11,9 +11,11 @@ final class NewCartViewController: UIViewController {
 
     private let newCartView = NewCartView()
     
-//    private let defaultManager = defaultManager()
+    private let newCartManager = NewCartManager()
     
-    override func loadView() { // -> viewDidLoad()보다 먼저 호출이 되는 메소드 -> 기본 view를 교체해줄 수 있음
+    private var cartItems: [CartItem] = []
+    
+    override func loadView() {
         view = newCartView
     }
     
@@ -24,7 +26,7 @@ final class NewCartViewController: UIViewController {
         
         newCartView.tableView.dataSource = self
         newCartView.tableView.delegate = self
-        newCartView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CartItemCell")
+        newCartView.tableView.register(CartItemCell.self, forCellReuseIdentifier: "CartItemCell")
     }
     
     func setupAddTarget() {
@@ -33,26 +35,55 @@ final class NewCartViewController: UIViewController {
     }
 
     @objc func addButtonTapped() {
-        print("addButton 호출")
-        // 테이블 뷰에 셀을 하나씩 추가.
+        print("장바구니 목록 추가하기 버튼 호출")
+        // 새 항목 추가
+        let newItem = CartItem(name: "", count: 1)
+        cartItems.append(newItem)
+        
+        // 새로운 셀을 테이블 뷰에 삽입하고 애니메이션 적용
+        let indexPath = IndexPath(row: cartItems.count - 1, section: 0)
+        newCartView.tableView.insertRows(at: [indexPath], with: .fade)
     }
     
     @objc func saveButtonTapped() {
-        print("saveButton 호출")
+        print("저장하기 버튼 호출")
+        
+        newCartManager.saveData(newCartView.nameTextField.text, cartItems)
     }
 }
 
 extension NewCartViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 10 // 예시로 10개의 셀을 만듭니다.
-        return 0
+        return cartItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemCell", for: indexPath)
-//        cell.textLabel?.text = "Row \(indexPath.row + 1)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemCell", for: indexPath) as! CartItemCell
+        cell.delegate = self
         return cell
+    }
+}
+
+extension NewCartViewController: CartItemCellDelegate {
+    
+    func cartItemCellDidTapDelete(_ cell: CartItemCell) {
+        if let indexPath = newCartView.tableView.indexPath(for: cell) {
+            cartItems.remove(at: indexPath.row)
+            newCartView.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func cartItemCellDidUpdateName(_ cell: CartItemCell, didUpdateName name: String?) {
+        if let indexPath = newCartView.tableView.indexPath(for: cell) {
+            cartItems[indexPath.row].name = name ?? ""
+        }
+    }
+    
+    func cartItemCellDidUpdateCount(_ cell: CartItemCell, didUpdateCount count: Int) {
+        if let indexPath = newCartView.tableView.indexPath(for: cell) {
+            cartItems[indexPath.row].count = count
+        }
     }
 }
 
@@ -61,6 +92,8 @@ extension NewCartViewController: UITableViewDataSource {
 extension NewCartViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("Selected row: \(indexPath.row + 1)")
+        print("Selected row: \(indexPath.row + 1)")
     }
 }
+
+

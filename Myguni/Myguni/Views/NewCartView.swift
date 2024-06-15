@@ -13,7 +13,7 @@ import TextFieldEffects
 final class NewCartView: UIView {
     
     // 장바구니 이름 입력 필드
-    private let nameTextField = HoshiTextField().then {
+    lazy var nameTextField = HoshiTextField().then {
         $0.placeholder = "타이틀 입력: 예 - 저녁 장보기"
         $0.placeholderColor = .gray
         $0.borderActiveColor = .gray

@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class MainViewController: UIViewController {
     
     private let mainView = MainView()
+    private let mainManager = MainManager()
+    private var carts: Results<Cart>?
     
     override func loadView() {
         self.view = mainView
@@ -24,36 +27,35 @@ final class MainViewController: UIViewController {
         
         mainView.tableView.dataSource = self
         mainView.tableView.delegate = self
-        mainView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        mainView.tableView.register(CartCell.self, forCellReuseIdentifier: "CartCell")
+        
+        carts = mainManager.getAllCarts() // Realm에서 저장된 Cart 데이터 가져오기
     }
-
+    
     private func setupAddTarget() {
         mainView.floatingButton.addTarget(self, action: #selector(floatingButtonTapped), for: .touchUpInside)
     }
     
-    //
     @objc func floatingButtonTapped() {
         print("플로팅 버튼 클릭")
         let newCartVC = NewCartViewController()
-//        newCartVC.modalPresentationStyle = .fullScreen
         present(newCartVC, animated: true, completion: nil)
     }
-    
 }
-
-
 
 // MARK: - UITableViewDataSource
 
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 // 예시로 10개의 셀을 만듭니다.
+        return carts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Row \(indexPath.row + 1)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as! CartCell
+        if let cart = carts?[indexPath.row] {
+            cell.nameLabel.text = cart.title
+        }
         return cell
     }
 }
@@ -66,6 +68,7 @@ extension MainViewController: UITableViewDelegate {
         print("Selected row: \(indexPath.row + 1)")
     }
 }
+
 
 
 
