@@ -13,16 +13,17 @@ final class MainView: UIView {
     
     // 제목 라벨
     private let nameLabel = UILabel().then {
-        $0.text = "나의 바구니" // 제목 미정..
+        $0.text = "Myguni" // 제목 미정..
         $0.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1) // 색깔 변경 예정
-        $0.font = UIFont.systemFont(ofSize: 40, weight: .heavy)
+        $0.font = UIFont.systemFont(ofSize: 50, weight: .heavy)
         $0.textAlignment = .center
     }
     
     // 테이블 뷰
     lazy var tableView = UITableView().then {
-        $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.gray.cgColor
+//        $0.layer.borderWidth = 1
+//        $0.layer.borderColor = UIColor.gray.cgColor
+        $0.separatorStyle = .none
     }
     
     // 플로팅 버튼
@@ -38,6 +39,16 @@ final class MainView: UIView {
         $0.layer.shadowRadius = 3 // 그림자 반경
     }
     
+    // 메시지 뷰
+    private let messageLabel = UILabel().then {
+        $0.text = "우측 하단에 있는 + 버튼을 눌러 카트를 추가해보세요!"
+        $0.textColor = .gray
+        $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        $0.textAlignment = .center
+        $0.numberOfLines = 0
+        $0.isHidden = true // 초기에는 숨김
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -48,7 +59,7 @@ final class MainView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }   
+    }
     
     private func setUp() {
         self.backgroundColor = .white
@@ -58,6 +69,7 @@ final class MainView: UIView {
         addSubview(nameLabel)
         addSubview(tableView)
         addSubview(floatingButton)
+        addSubview(messageLabel) // 메시지 뷰 추가
     }
     
     private func setConstraints() {
@@ -77,6 +89,16 @@ final class MainView: UIView {
             $0.trailing.equalToSuperview().inset(10)
             $0.bottom.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
+        
+        messageLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.left.right.equalToSuperview().inset(20)
+        }
+    }
+    
+    func showMessage(_ show: Bool) {
+        messageLabel.isHidden = !show
     }
 }
+
 

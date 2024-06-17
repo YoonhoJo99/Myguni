@@ -25,14 +25,14 @@ final class NewCartView: UIView {
     lazy var addButton = UIButton().then {
         $0.setTitle("장바구니 목록 추가하기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         $0.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         $0.layer.cornerRadius = 10
     }
     
     // 장바구니 목록 테이블 뷰
     lazy var tableView = UITableView().then {
-        $0.layer.borderWidth = 1
+        $0.layer.borderWidth = 0.5
         $0.layer.borderColor = UIColor.gray.cgColor
     }
     
@@ -40,7 +40,7 @@ final class NewCartView: UIView {
     lazy var saveButton = UIButton().then {
         $0.setTitle("저장하기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         $0.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         $0.layer.cornerRadius = 10
     }

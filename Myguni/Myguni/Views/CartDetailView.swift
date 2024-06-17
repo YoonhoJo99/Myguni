@@ -26,7 +26,7 @@ final class CartDetailView: UIView {
     lazy var addButton = UIButton().then {
         $0.setTitle("장바구니 목록 추가하기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         $0.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         $0.layer.cornerRadius = 10
     }
@@ -41,7 +41,7 @@ final class CartDetailView: UIView {
     lazy var editButton = UIButton().then {
         $0.setTitle("돌아가기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         $0.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         $0.layer.cornerRadius = 10
     }
@@ -50,7 +50,7 @@ final class CartDetailView: UIView {
     lazy var deleteButton = UIButton().then {
         $0.setTitle("삭제하기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         $0.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         $0.layer.cornerRadius = 10
     }

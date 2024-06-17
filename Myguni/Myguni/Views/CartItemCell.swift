@@ -27,8 +27,9 @@ final class CartItemCell: UITableViewCell {
     
     // 수량 입력 필드
     lazy var countTextField = UITextField().then {
-        $0.placeholder = "1"
+        $0.text = "1"
         $0.borderStyle = .roundedRect
+        $0.textAlignment = .center
     }
     
     // 삭제 버튼

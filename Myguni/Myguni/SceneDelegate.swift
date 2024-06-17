@@ -24,22 +24,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // 첫번째 화면은 네비게이션컨트롤러로 만들기 (기본루트뷰 설정)
         let vc1 = UINavigationController(rootViewController: MainViewController())
-        let vc2 = MainViewController()
+//        let vc2 = SettingViewController()
 
 
         // 탭바 이름들 설정
         vc1.title = "Main"
-        vc2.title = "Second"
+//        vc2.title = "Setting"
         
         // 탭바로 사용하기 위한 뷰 컨트롤러들 설정
-        tabBarVC.setViewControllers([vc1, vc2], animated: false)
+        tabBarVC.setViewControllers([vc1], animated: false)
         tabBarVC.modalPresentationStyle = .fullScreen
         tabBarVC.tabBar.backgroundColor = .white
         
         // 탭바 이미지 설정 (이미지는 애플이 제공하는 것으로 사용)
         guard let items = tabBarVC.tabBar.items else { return }
-        items[0].image = UIImage(systemName: "folder")
-        items[1].image = UIImage(systemName: "folder")
+        items[0].image = UIImage(systemName: "house")
+//        items[1].image = UIImage(systemName: "gear")
             
         // 전 강의에서는 present했음. 여기서는 아님 -> window속성에 가장 기본이 되는 Cotroller를 tabBar컨트롤러로 넣어줌
         
@@ -47,6 +47,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = tabBarVC
         window?.makeKeyAndVisible() // 몰라도 됨. 우리가 코드로 UI를 만들 때 사용하는 코드. 외우지 마!
     }
+    
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

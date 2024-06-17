@@ -10,7 +10,7 @@ import RealmSwift
 
 final class MainViewController: UIViewController {
     
-    private let mainView = MainView()
+    private var mainView = MainView()
     private let mainManager = MainManager()
     private var carts: Results<Cart>?
     private var notificationToken: NotificationToken?
@@ -56,8 +56,8 @@ final class MainViewController: UIViewController {
     
     private func loadCarts() {
         carts = mainManager.getAllCarts()
-//        print(carts)
         mainView.tableView.reloadData()
+        mainView.showMessage(carts?.isEmpty ?? true) // 카트가 비어있는지 여부에 따라 메시지 표시
     }
     
     private func observeRealmChanges() {

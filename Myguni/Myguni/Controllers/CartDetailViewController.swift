@@ -27,15 +27,17 @@ final class CartDetailViewController: UIViewController {
     
     override func loadView() {
         view = cartDetailView
-        
-        cartDetailView.nameTextField.text = cart.title
-        cartDetailView.tableView.dataSource = self
-        cartDetailView.tableView.delegate = self
-        cartDetailView.tableView.register(CartItemCell.self, forCellReuseIdentifier: "CartItemCell")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cartDetailView.nameTextField.text = cart.title
+        
+        cartDetailView.tableView.dataSource = self
+        cartDetailView.tableView.delegate = self
+        cartDetailView.tableView.register(CartItemCell.self, forCellReuseIdentifier: "CartItemCell")
+        
         setupAddTarget()
     }
     
