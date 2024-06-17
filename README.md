@@ -20,6 +20,19 @@
 - 아키텍처 및 패턴
   - MVC (Model-View-Controller): 앱의 구조를 모델, 뷰, 컨트롤러로 분리하여 유지보수성을 높였습니다.
  
+## 4. 주요 화면
+<img src="https://github.com/YoonhoJo99/Myguni/assets/142677383/c751e8bf-a7a2-4298-86fc-b805103c7753" alt="Simulator Screenshot - iPhone 15 Pro - 2024-06-17 at 19 15 20" width="300" height="550">
+
+<img src="https://github.com/YoonhoJo99/Myguni/assets/142677383/32b46f6c-4e77-4852-8869-5e4dbfeb6646" alt="Simulator Screenshot - iPhone 15 Pro - 2024-06-17 at 19 15 56" width="300" height="550">
+
+<img src="https://github.com/YoonhoJo99/Myguni/assets/142677383/db5890fd-2db3-49b2-9d0d-6fde494dfc01" alt="Simulator Screenshot - iPhone 15 Pro - 2024-06-17 at 19 16 28" width="300" height="550">
+
+<img src="https://github.com/YoonhoJo99/Myguni/assets/142677383/12325398-b02d-47d8-832c-e6accc122ff9" alt="Simulator Screenshot - iPhone 15 Pro - 2024-06-17 at 19 16 52" width="300" height="550">
+
+
+
+
+ 
 
 
 
